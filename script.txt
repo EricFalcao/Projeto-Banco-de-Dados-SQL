@@ -1,0 +1,1824 @@
+select distinct
+codigo_orgao,
+dsc_orgao
+from public.execucao_financeira_despesa -- exitem 1086 informações
+
+select distinct
+codigo_orgao
+from public.execucao_financeira_despesa -- existem 918 códigos
+
+select distinct
+dsc_orgao
+from public.execucao_financeira_despesa -- existem 1056 descrições
+
+--colocando os registros em letra maíscula
+update public.execucao_financeira_despesa
+set dsc_orgao = upper (dsc_orgao)
+
+
+
+------------------------------------------------------------------------------
+--CRIANDO A VIEW DADOS_ORGAO
+------------------------------------------------------------------------------
+create view  dados_orgao as
+select distinct
+codigo_orgao,
+dsc_orgao
+from public.execucao_financeira_despesa 
+
+select * from dados_orgao -- 1086 informações
+
+
+
+------------------------------------------------------------------------------
+--TRATAMENTO DA DSC_ORGAO
+------------------------------------------------------------------------------
+select distinct dsc_orgao,
+count (dsc_orgao)
+from dados_orgao
+group by dsc_orgao
+having count (dsc_orgao) > 1
+
+select distinct
+dsc_orgao
+from dados_orgao
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where dsc_orgao = 'EEFM GOVERNADOR ADAUTO BEZERRA'
+--
+update public.execucao_financeira_despesa
+set codigo_orgao = 228502
+where dsc_orgao = 'EEFM GOVERNADOR ADAUTO BEZERRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where dsc_orgao = 'EEM ALMIR PINTO'
+--
+update public.execucao_financeira_despesa
+set codigo_orgao = 228399
+where dsc_orgao = 'EEM ALMIR PINTO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where dsc_orgao = 'EEM FILGUEIRAS LIMA'
+--
+update public.execucao_financeira_despesa
+set codigo_orgao = 228544
+where dsc_orgao = 'EEM FILGUEIRAS LIMA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where dsc_orgao = 'EEM GOVERNADOR ADAUTO BEZERRA'
+--
+update public.execucao_financeira_despesa
+set codigo_orgao = 228108
+where dsc_orgao = 'EEM GOVERNADOR ADAUTO BEZERRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where dsc_orgao = 'EEM PLÁCIDO ADERALDO CASTELO'
+--
+update public.execucao_financeira_despesa
+set codigo_orgao = 228348
+where dsc_orgao = 'EEM PLÁCIDO ADERALDO CASTELO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where dsc_orgao = 'EEMTI GOVERNADOR ADAUTO BEZERRA'
+--
+update public.execucao_financeira_despesa
+set codigo_orgao = 228545
+where dsc_orgao = 'EEMTI GOVERNADOR ADAUTO BEZERRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where dsc_orgao = 'EEMTI MENEZES PIMENTEL'
+--
+update public.execucao_financeira_despesa
+set codigo_orgao = 228400
+where dsc_orgao = 'EEMTI MENEZES PIMENTEL'
+
+
+
+------------------------------------------------------------------------------
+--TRATAMENTO DA CODIGO_ORGAO
+------------------------------------------------------------------------------
+select distinct codigo_orgao,
+count (codigo_orgao)
+from dados_orgao
+group by codigo_orgao
+having count (codigo_orgao) > 1
+
+select distinct
+codigo_orgao
+from dados_orgao
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '010101'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'FUNDO DE PREVIDENCIA PARLAMENTAR DA ASSEMB LEGISL DO CE'
+where dsc_orgao = 'FUNDO DE PREVIDENCIA PARLAMENTAR'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '190001'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'SECRETARIA DA FAZENDA'
+where dsc_orgao = 'SECRETARIA DA FAZENDASSSSSSSSSSSSSSSSSSS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228001'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM ESTADO DE ALAGOAS'
+where dsc_orgao = 'EEMTI ESTADO DE ALAGOAS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228002'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PROFESSORA BALBINA JUCÁ DE ALBUQUERQUE'
+where dsc_orgao = 'EEMTI PROFESSORA BALBINA JUCA ALBUQUERQUE'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228015'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM JOSÉ VALDO RIBEIRO RAMOS'
+where dsc_orgao = 'EEMTI JOSE VALDO RIBEIRO RAMOS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228016'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEMTI DA VILA VELHA'
+where dsc_orgao = 'LICEU DA VILA VELHA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228017'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM LIONS JANGADA'
+where dsc_orgao = 'EEMTI LIONS JANGADA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228024'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM WALDEMAR FALCÃO'
+where dsc_orgao = 'EEMTI WALDEMAR FALCAO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228026'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM ANTONIETA SIQUEIRA'
+where dsc_orgao = 'EEMTI ANTONIETA SIQUEIRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228027'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM ANTÔNIO BEZERRA'
+where dsc_orgao = 'EEMTI ANTONIO BEZERRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228029'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM AYRTON SENNA DA SILVA'
+where dsc_orgao = 'EEMTI AYRTON SENNA DA SILVA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228035'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM MONSENHOR DOURADO'
+where dsc_orgao = 'EEMTI MONSENHOR DOURADO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228050'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PROFESSOR PAULO FREIRE'
+where dsc_orgao = 'EEMTI PROFESSOR PAULO FREIRE'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228057'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM DRAGÃO DO MAR'
+where dsc_orgao = 'EEMTI DRAGAO DO MAR'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228058'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM HELENITA MOTA'
+where dsc_orgao = 'EEFM HELENITA MOTA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228064'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'COLÉGIO ESTADUAL LICEU DO CEARÁ'
+where dsc_orgao = 'COLEGIO ESTADUAL LICEU DO CEARA – EEMTI'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228067'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM MATIAS BECK'
+where dsc_orgao = 'EEMTI MATIAS BECK'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228068'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM GENERAL MURILO BORGES MOREIRA'
+where dsc_orgao = 'EEFM GENERAL MURILO BORGES MOREIRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228072'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM RENATO BRAGA'
+where dsc_orgao = 'EEMTI RENATO BRAGA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228075'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM VISCONDE DO RIO BRANCO'
+where dsc_orgao = 'EEMTI VISCONDE DO RIO BRANCO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228083'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM ESTADO DO PARÁ'
+where dsc_orgao = 'EEMTI ESTADO DO PARA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228085'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PADRE GUILHERME WAESSEN'
+where dsc_orgao = 'EEMTI PADRE GUILHERME WAESSEN'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228087'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM IRACEMA'
+where dsc_orgao = 'EEMTI IRACEMA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228089'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM JOÃO NOGUEIRA JUCÁ'
+where dsc_orgao = 'EEMTI JOAO NOGUEIRA JUCA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228094'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM DONA LUÍZA TÁVORA - PROMORAR'
+where dsc_orgao = 'EEM LUIZA TAVORA – PROMORAR'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228095'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PADRE MARCELINO CHAMPAGNAT'
+where dsc_orgao = 'EEMTI PADRE MARCELINO CHAMPAGNAT'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228099'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM MIRIAN PORTO MOTA'
+where dsc_orgao = 'EEMTI MIRIAN PORTO MOTA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228102'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM DEPUTADO PAULO BENEVIDES'
+where dsc_orgao = 'EEMTI DEPUTADO PAULO BENEVIDES'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228103'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM POETA OTACÍLIO COLARES'
+where dsc_orgao = 'EEMTI POETA OTACILIO COLARES'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228104'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PROFESSORA TELINA BARBOSA DA COSTA'
+where dsc_orgao = 'EEMTI PROFESSORA TELINA BARBOSA DA COSTA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228106'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PROFESSORA TECLA FERREIRA'
+where dsc_orgao = 'EEMTI PROFESSORA TECLA FERREIRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228109'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM ESTADO DO AMAZONAS'
+where dsc_orgao = 'EEMTI ESTADO DO AMAZONAS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228114'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM GENERAL EUDORO CORRÊA'
+where dsc_orgao = 'EEMTI GENERAL EUDORO CORREA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228115'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM SENADOR FERNANDES TÁVORA'
+where dsc_orgao = 'EEMTI SENADOR FERNANDES TAVORA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228119'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEMTI PRESIDENTE HUMBERTO DE ALENCAR CASTELO BRANCO'
+where dsc_orgao = 'COLÉGIO ESTADUAL PRESIDENTE HUMBERTO DE ALENCAR CASTELO BRANCO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228122'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEMTI JENNY GOMES'
+where dsc_orgao = 'COLÉGIO JENNY GOMES'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228123'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM JOÃO MATTOS'
+where dsc_orgao = 'EEMTI JOÃO MATOS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228126'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PROFESSOR CORONEL JOSÉ AURÉLIO CÂMARA'
+where dsc_orgao = 'EEMTI PROFESSOR CORONEL JOSE AURELIO CAMARA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228128'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM MARIA THOMÁSIA'
+where dsc_orgao = 'EEMTI MARIA THOMASIA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228130'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM ESTADO DO PARANÁ'
+where dsc_orgao = 'EEMTI ESTADO DO PARANÁ'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228147'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM DEPUTADO IRAPUAN CAVALCANTE PINHEIRO'
+where dsc_orgao = 'EEMTI DEPUTADO IRAPUAN CAVALCANTE PINHEIRO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228148'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM IRMÃO URBANO GONZALEZ RODRIGUES'
+where dsc_orgao = 'EEMTI IRMAO URBANO GONZALEZ RODRIGUEZ'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228150'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PROFESSOR JOCIÊ CAMINHA DE MENEZES'
+where dsc_orgao = 'EEMTI PROFESSOR JOCIE CAMINHA DE MENEZES'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228157'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM ESTADO DO MARANHÃO'
+where dsc_orgao = 'EEMTI ESTADO DO MARANHÃO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228158'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PROFESSORA MARIA ANTONIETA NUNES'
+where dsc_orgao = 'EEMTI PROFESSORA MARIA ANTONIETA NUNES'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228162'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM SENADOR OSIRES PONTES'
+where dsc_orgao = 'EEMTI SENADOR OSIRES PONTES'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228164'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM POETA PATATIVA DO ASSARÉ'
+where dsc_orgao = 'EEMTI POETA PATATIVA DO ASSARE'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228166'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PROFESSOR PLÁCIDO ADERALDO CASTELO'
+where dsc_orgao = 'EEMTI PROFESSOR PLACIDO ADERALDO CASTELO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228172'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'CAIC SENADOR CARLOS JEREISSATI'
+where dsc_orgao = 'EEMTI CAIC SENADOR CARLOS JEREISSATI'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228174'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PRESIDENTE JOSÉ SARNEY'
+where dsc_orgao = 'EEMTI PRESIDENTE JOSÉ SARNEY'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228175'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM DOM ALOÍSIO LORSCHEIDER'
+where dsc_orgao = 'EEMTI DOM ALOISIO LORSCHEIDER'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228180'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM JOSÉ ALEXANDRE'
+where dsc_orgao = 'EEMTI JOSE ALEXANDRE'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228190'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM CARNEIRO DE MENDONÇA'
+where dsc_orgao = 'EEMTI CARNEIRO DE MENDONÇA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228191'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM BRANCA CARNEIRO DE MENDONÇA'
+where dsc_orgao = 'EEM BRANCA CARNEIRO DE MENDONCA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228207'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM JOSÉ TRISTÃO FILHO'
+where dsc_orgao = 'EEMTI JOSE TRISTAO FILHO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228217'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM ANTÔNIO LUIS COELHO'
+where dsc_orgao = 'EEMTI ANTONIO LUIZ COELHO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228232'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM RITA ESTELITA DOS SANTOS RODRIGUES'
+where dsc_orgao = 'EEM DE AMONTADA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228234'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PROFESSORA ESTEFÂNIA MATOS'
+where dsc_orgao = 'EEMTI PROFESSORA ESTEFANIA MATOS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228237'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM ANTÔNIO CUSTÓDIO MESQUITA'
+where dsc_orgao = 'EEMTI ANTONIO CUSTODIO DE MESQUITA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228241'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM HILDEBERTO BARROSO'
+where dsc_orgao = 'EEMTI HILDEBERTO BARROSO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228246'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PROFESSORA MARIA LUÍZA SABÓIA RIBEIRO'
+where dsc_orgao = 'EEMTI PROFESSORA MARIA LUIZA SABÓIA RIBEIRO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228252'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MATILDE RODRIGUES VASCONCELOS'
+where dsc_orgao = 'EEMTI MATILDE RODRIGUES VASCONCELOS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228271'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM CARMINHA VASCONCELOS'
+where dsc_orgao = 'EEMTI CARMINHA VASCONCELOS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228272'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PROFESSORA MARIETA SANTOS'
+where dsc_orgao = 'EEMTI PROFESSORA MARIETA SANTOS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228273'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM SÃO FRANCISCO DA CRUZ'
+where dsc_orgao = 'EEMTI SAO FRANCISCO DA CRUZ'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228276'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM RICARDO DE SOUSA NEVES'
+where dsc_orgao = 'EEMTI RICARDO DE SOUSA NEVES'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228285'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PROFESSORA THEOLINA DE MURYLLO ZACAS'
+where dsc_orgao = 'EEMTI PROFESSORA THEOLINA DE MURYLLO ZACAS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228287'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PREFEITO JOSÉ MARIA MONTEIRO'
+where dsc_orgao = 'EEMTI PREFEITO JOSE MARIA MONTEIRO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228288'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM FRANCISCO PORCIANO FERREIRA'
+where dsc_orgao = 'EEMTI FRANCISCO PORCIANO FERREIRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228290'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM VICENTE DE PAULO DA COSTA'
+where dsc_orgao = 'EEMTI VICENTE DE PAULO DA COSTA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228293'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEMTI PROFESSOR IVAN PEREIRA DE CARVALHO'
+where dsc_orgao = 'COLÉGIO ESTADUAL PROFESSOR IVAN PEREIRA DE CARVALHO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228297'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEMTI SAO JOSE'
+where dsc_orgao = 'COLÉGIO ESTADUAL SÃO JOSÉ'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228311'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM FLÁVIO RIBEIRO LIMA'
+where dsc_orgao = 'EEMTI FLÁVIO RIBEIRO LIMA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228319'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM MONSENHOR ANTONINO'
+where dsc_orgao = 'EEMTI MONSENHOR ANTONINO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228320'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM ANTÔNIO RAIMUNDO DE MELO'
+where dsc_orgao = 'EEMTI ANTONIO RAIMUNDO DE MELO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228330'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM IRMÃ LINS'
+where dsc_orgao = 'EEMTI IRMÃ LINS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228341'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PRISCILA MACIEL DE FRANÇA'
+where dsc_orgao = 'EEMTI PRISCILA MACIEL DE FRANCA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228343'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM WILEBALDO AGUIAR'
+where dsc_orgao = 'EEMTI WILEBALDO AGUIAR'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228346'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM HUET ARRUDA'
+where dsc_orgao = 'EEMTI HUET ARRUDA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228347'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM FRANCISCO SOARES DE OLIVEIRA'
+where dsc_orgao = 'EEMTI FRANCISCO SOARES DE OLIVEIRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228354'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM DEPUTADO CESÁRIO BARRETO LIMA'
+where dsc_orgao = 'EEMTI DEPUTADO CESARIO BARRETO LIMA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228358'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PROFESSOR LUIS FELIPE'
+where dsc_orgao = 'EEFM PROFESSOR LUIS FELIPE'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228361'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM SINHÁ SABÓIA'
+where dsc_orgao = 'EEMTI SINHA SABOIA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228364'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM AYRES DE SOUSA'
+where dsc_orgao = 'EEMTI AYRES DE SOUSA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228372'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM DE IRAUÇUBA'
+where dsc_orgao = 'EEMTI DIRETORA MARIA DILMA BASTOS FERREIRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228380'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MARIA MENEZES CRISTINO'
+where dsc_orgao = 'EEMTI MARIA MENEZES CRISTINO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228388'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM TOMÉ GOMES DOS SANTOS'
+where dsc_orgao = 'EEMTI TOME GOMES DOS SANTOS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228389'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM CASEMIRO BEZERRA DE ARAÚJO'
+where dsc_orgao = 'EEMTI CASEMIRO BEZERRA DE ARAUJO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228394'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MARIA NEUSA ARAUJO MOURA'
+where dsc_orgao = 'EEMTI MARIA NEUSA ARAUJO MOURA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228398'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PROFESSOR MILTON FAÇANHA ABREU'
+where dsc_orgao = 'EEMTI PROFESSOR MILTON FAÇANHA ABREU'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228399'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM ALMIR PINTO'
+where dsc_orgao = 'EEMTI ALMIR PINTO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228400'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MENEZES PIMENTEL'
+where dsc_orgao = 'EEMTI MENEZES PIMENTEL'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228403'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM DEPUTADO UBIRATAN DINIZ AGUIAR'
+where dsc_orgao = 'EEMTI DEPUTADO  UBIRATAN DINIZ DE AGUIAR'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228407'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MARIA AMÉLIA PERDIGÃO SAMPAIO'
+where dsc_orgao = 'EEMTI MARIA AMELIA PERDIGAO SAMPAIO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228413'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM JOÃO ALVES MOREIRA'
+where dsc_orgao = 'EEMTI JOAO ALVES MOREIRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228414'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM DOUTOR BRUNILO JACÓ'
+where dsc_orgao = 'EEMTI DR. BRUNILO JACO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228415'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM VEREADORA EDIMAR MARTINS DA CUNHA'
+where dsc_orgao = 'EEMTI VEREADORA EDIMAR MARTINS DA CUNHA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228426'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'CEJA DE PACAJUS'
+where dsc_orgao = 'CEJA PROFESSORA MARIA JOELIA CARVALHO SILVA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228428'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEEP LUCIA HELENA VIANA RIBEIRO'
+where dsc_orgao = 'EEEP MARIA DOLORES ALCÂNTARA E SILVA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228430'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM BARÃO DE ARACATI'
+where dsc_orgao = 'EEMTI BARAO DE ARACATI'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228433'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM JOÃO BARBOSA LIMA'
+where dsc_orgao = 'EEMTI JOAO BARBOSA LIMA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228434'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM FRANCISCO JAGUARIBE'
+where dsc_orgao = 'EEMTI FRANCISCO JAGUARIBE'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228441'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MARIA DE LOURDES OLIVEIRA'
+where dsc_orgao = 'EEMTI MARIA DE LOURDES OLIVEIRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228449'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM FRANCISCO GUERREIRO CHAVES'
+where dsc_orgao = 'EEMTI FRANCISCO GUERREIRO CHAVES'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228472'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PROFESSORA MARIA EDILCE DIAS FERNANDES'
+where dsc_orgao = 'EEMTI PROFESSORA MARIA EDILCE DIAS FERNANDES'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228510'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MARIA VIEIRA DE PINHO'
+where dsc_orgao = 'EEM MARIA VIEIRA PINHO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228520'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PROFESSOR PEDRO JAIME'
+where dsc_orgao = 'EEMTI PROFESSOR PEDRO JAIME'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228523'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM DE MINEIROLÂNDIA'
+where dsc_orgao = 'EEMTI DE MINEIROLANDIA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228525'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MARECHAL HUMBERTO DE ALENCAR CASTELO BRANCO'
+where dsc_orgao = 'EEMTI MARECHAL HUMBERTO DE ALENCAR CASTELO BRANCO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228526'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM EUCLIDES PINHEIRO DE ANDRADE'
+where dsc_orgao = 'EEMTI EUCLIDES PINHEIRO DE ANDRADE'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228527'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEMTI LICEU MARCIOLINO GOMES DE FREITAS'
+where dsc_orgao = 'LICEU DE SENADOR POMPEU MARCIONÍLIO GOMES DE FREITAS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228528'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM JOAQUIM JOSUÉ DA COSTA (NIVEL C)'
+where dsc_orgao = 'EEMTI JOAQUIM JOSUE DA COSTA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228529'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM ELZA GOMES MARTINS'
+where dsc_orgao = 'EEMTI ELZA GOMES MARTINS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228535'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEMTI MARIA LUIZA DE CASTRO FEITOSA – LILI FEITOSA'
+where dsc_orgao = 'LICEU LILI FEITOSA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228543'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM ADAHIL BARRETO'
+where dsc_orgao = 'EEMTI ADAHIL BARRETO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228552'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PEDRO JORGE MOTA'
+where dsc_orgao = 'EEMTI PEDRO JORGE MOTA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228556'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM FRANCISCO ASSIS VIEIRA'
+where dsc_orgao = 'EEMTI FRANCISCO ASSIS VIEIRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228557'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM JOSEFA ALVES BEZERRA'
+where dsc_orgao = 'EEMTI JOSEFA ALVES BEZERRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228567'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MONSENHOR MANOEL CARLOS DE MORAIS'
+where dsc_orgao = 'EEMTI MONSENHOR MANOEL CARLOS DE MORAIS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228571'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PROFESSORA MARIA AFONSINA DINIZ MACÊDO'
+where dsc_orgao = 'EEMTI PROFESSORA MARIA AFONSINA DINIZ MACEDO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228584'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM TEODORICO TELES DE QUENTAL'
+where dsc_orgao = 'EEMTI TEODORICO TELES DE QUENTAL'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228585'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM SANTA TEREZA'
+where dsc_orgao = 'EEMTI SANTA TEREZA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228590'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM PADRE LUÍS FILGUEIRAS'
+where dsc_orgao = 'EEMTI PADRE LUIS FILGUEIRAS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228592'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM ADRIÃO DO VALE NUVENS'
+where dsc_orgao = 'EEMTI ADRIAO  DO VALE NUVENS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228595'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM JOSÉ WALDEMAR DE ALCANTARA E SILVA'
+where dsc_orgao = 'EEMTI JOSÉ WALDEMAR DE ALCANTARA E SILVA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228597'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM LÍDIA BEZERRA'
+where dsc_orgao = 'EEMTI LIDIA BEZERRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228600'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM ANTÔNIO MOTA'
+where dsc_orgao = 'EEMTI ANTONIO MOTA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228607'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM SÃO PEDRO'
+where dsc_orgao = 'EEMTI SAO PEDRO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228608'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM VÍRGILIO TÁVORA'
+where dsc_orgao = 'EEMTI VIRGILIO TAVORA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228627'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MIGUEL SARAIVA PINHEIRO'
+where dsc_orgao = 'EEMTI MIGUEL SARAIVA PINHEIRO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228632'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM ANDRÉ CARTAXO'
+where dsc_orgao = 'EEMTI ANDRE CARTAXO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228637'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM SIMÃO ÂNGELO'
+where dsc_orgao = 'EEMTI SIMAO ANGELO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228638'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MOISÉS BENTO DA SILVA'
+where dsc_orgao = 'EEMTI MOISES BENTO DA SILVA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228640'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEFM BELARMINO LINS DE MEDEIROS'
+where dsc_orgao = 'EEMTI BELARMINO LINS DE MEDEIROS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228642'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM DONA ANTÔNIA LINDALVA DE MORAIS'
+where dsc_orgao = 'EEMTI DONA ANTONIO LINDALVA DE MORAIS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228644'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM ARISTARCO CARDOSO'
+where dsc_orgao = 'EEMTI ARISTARCO CARDOSO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228653'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MARIA CELESTE DE AZEVEDO'
+where dsc_orgao = 'EEMTI MARIA CELESTE DE AZEVEDO PORTO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228655'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEMTI MARIA EMILIA RABELO'
+where dsc_orgao = 'COLÉGIO ESTADUAL MARIA EMÍLIA RABELO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228728'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM GERALDO BENONI GOMES SILVEIRA'
+where dsc_orgao = 'EEMTI GERALDO BENONI GOMES SILVEIRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228749'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEEP RAIMUNDO CELIO RODRIGUES'
+where dsc_orgao = 'EEEP DE PACATUBA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228756'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM ZUMIRA AGASSIS'
+where dsc_orgao = 'EEMTI ZULMIRA AGASSIS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228766'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PROFESSORA LIDIA CARNEIRO DE BARROS'
+where dsc_orgao = 'EEMTI PROFESSORA LIDIA CARNEIRO DE BARROS'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228773'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM JOAQUIM RODRIGUES DE LIMA'
+where dsc_orgao = 'EEMTI JOAQUIM RODRIGUES DE LI,MA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228777'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM FRANCISCO NAILTON CAVALCANTE DE LIMA'
+where dsc_orgao = 'EEMTI FRANCISCO NAILTON CAVALCANTE DE LIMA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228783'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM JOSEFA CLEMENTINO FERREIRA DE OLIVEIRA'
+where dsc_orgao = 'EEMTI JOSEFA CLEMENTINO FERREIRA DE OLIVEIRA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228785'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEMTI PROFESSORA IRACI PEREIRA DE ALCANTARA'
+where dsc_orgao = 'ESC.ENS. MEDIO PROFA IRACI PEREIRA DE ALCANTARA'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228788'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM PREFEITO DARIO CAMPOS FEIJO'
+where dsc_orgao = 'EEMTI PREFEITO DARIO CAMPOS FEIJO'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '228789'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEEP CLEMENTE OLINHO TAVORA ARRUDA'
+where dsc_orgao = 'ESCOLA ESTADUAL DE EDUCACAO PROFISSIONAL DE BATURITE'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229216'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'CENTRO DE REFERENCIA EM EDUCACAO E ATENDIMENTO ESPECIALIZACAO DO CEARA'
+where dsc_orgao is null and codigo_orgao = '229216'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229218'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM MARIA ZENOBIA RODRIGUES BRAGA'
+where dsc_orgao is null and codigo_orgao = '229218'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229220'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'ESCOLA ESTADUAL DE EDUC. PROF. LUCIA BALTAZAR COSTA'
+where dsc_orgao is null and codigo_orgao = '229220'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229221'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEEP JAIME DA CUNHA REOUCAS'
+where dsc_orgao is null and codigo_orgao = '229221'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229224'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'CENTRO CEARENSE DE IDIOMAS - UNIDADE QUIXADA'
+where dsc_orgao is null and codigo_orgao = '229224'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229225'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'ESCOLA INDIGENA POTYGUARA DE JUCAS'
+where dsc_orgao is null and codigo_orgao = '229225'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229226'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'ESCOLA EST DE EDUC PROFISSIONAL MARIA MADEIRO DIAS'
+where dsc_orgao is null and codigo_orgao = '229226'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229227'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEEP JOSE CIRO NOGUEIRA MACHADO'
+where dsc_orgao is null and codigo_orgao = '229227'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229228'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'ESCOLA DE ENSINO MEDIO FRANCISCO MIGUEL DE ANDRADE'
+where dsc_orgao is null and codigo_orgao = '229228'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229235'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEMTI FRANCISCO MIZAEL CAVALCANTE'
+where dsc_orgao is null and codigo_orgao = '229235'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229240'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEMTI MARIA DOLORES ALCANTARA E SILVA'
+where dsc_orgao is null and codigo_orgao = '229240'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229243'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'CENTRO CEARENSE DE IDIOMAS - UNIDADE CASCAVEL'
+where dsc_orgao is null and codigo_orgao = '229243'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229245'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM RAIMUNDO NONATO CARLOS DOS SANTOS'
+where dsc_orgao is null and codigo_orgao = '229245'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229247'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'CENTRO DE EDUCAÇÃO COMPLEMENTAR'
+where dsc_orgao is null and codigo_orgao = '229247'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229248'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEM LUIZETE ALBANO DE FREITAS MENEZES'
+where dsc_orgao is null and codigo_orgao = '229248'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '310601'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'FUNDACAO NUCLEO DE TECNOLOGIA INDUSTRIAL DO CEARA'
+where dsc_orgao = 'NUCLEO DE TECNOLOGIA E QUALIDADE INDUSTRIAL DO CEARA'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'FUNDACAO NUCLEO DE TECNOLOGIA INDUSTRIAL DO CEARA'
+where dsc_orgao = 'NUCLEO DE TECNOLOGIA E QUALIDADE INDUSTRIAL DO CEARA - NUTEC'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '560001'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'SECRETARIA DO DESENVOLVIMENTO ECONÔMICO E TRABALHO'
+where dsc_orgao = 'SECRETARIA DO DESENVOLVIMENTO ECONÔMICO E TRABALHO	'
+
+
+------------------------------------------------------------------------------
+--ACRESCENTANDO INFORMAÇÕES PARA DESCRIÇÃO NULA
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where dsc_orgao is null
+
+
+
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229221'
+--
+update public.execucao_financeira_despesa
+set dsc_orgao = 'EEEP JAIME DA CUNHA REOUCAS'
+where dsc_orgao is null and codigo_orgao = '229221'
+------------------------------------------------------------------------------
+select
+codigo_orgao,
+dsc_orgao
+from dados_orgao
+where codigo_orgao = '229241'
+------------------------------------------------------------------------------
+update public.execucao_financeira_despesa
+set dsc_orgao = 'NÃO INFORMADO'
+where dsc_orgao is null
+
+
+
+
+-- 229254 - 'Secreatria da Educação'
+-- 229258 - 'Secretatia da Educação'
+-- 590001 - 'Secretaria do trabalho'
+-- 610001 - 'Secretaria da Pesca e Aquicultura'
+-- 620001 - 'Secretaria das Mulheres'
+-- 630001 - 'Secretaria dos Direitos Humanos'
